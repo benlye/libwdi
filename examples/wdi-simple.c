@@ -46,7 +46,6 @@
 #define INF_NAME    "usb_device.inf"
 #define DEFAULT_DIR "usb_driver"
 
-
 void usage(void)
 {
 	printf("\n");
@@ -131,6 +130,12 @@ int __cdecl main(int argc, char** argv)
 	ocl.list_hubs = TRUE;
 	ocl.trim_whitespaces = TRUE;
 	opd.driver_type = WDI_WINUSB;
+
+	if (argc == 1)
+	{
+		usage();
+		exit(0);
+	}
 
 	while(1)
 	{
